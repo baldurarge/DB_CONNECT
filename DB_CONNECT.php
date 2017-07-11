@@ -1,14 +1,14 @@
 <?php
 global $PDO,$connection;
 try{
-	$PDO = new PDO('mysql:host=tsuts.tskoli.is;dbname=database_nafnið', 'kennitalan', 'password');
+	$PDO = new PDO('mysql:host= ;dbname= ', 'login', 'password');
 	$PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$PDO->exec('SET NAMES "utf8"');
-	$tokst= "Tenging tókst við gagnagrunn";
+	$tokst= "Connection Was Successful";
 }
 catch (PDOException $e){
 	$connection = false;
-	echo "tenging tókst ekki". "<br>" . $e->getMessage();
+	echo "Connection error --- ". "<br>" . $e->getMessage();
 	exit();
 }
 $connection = true;
